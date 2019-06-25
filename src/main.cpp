@@ -83,32 +83,36 @@ int main(int argc, const char* argv[])
 		else if (option == 3)
 		{
 			std::string state;
-			std::cout << "Enter state: ";
-			std::cin >> state;
+			std::cout << "Enter state (string): ";
+			std::cin.ignore();
+			std::getline(std::cin, state);
 
 			std::string details;
-			std::cout << "Enter details: ";
-			std::cin >> details;
+			std::cout << "Enter details (string): ";
+			std::cin.ignore();
+			std::getline(std::cin, state);
 
 			long startTimestamp;
-			std::cout << "Enter start timestamp: ";
+			std::cout << "Enter start timestamp (number): ";
 			std::cin >> startTimestamp;
 
 			long endTimestamp;
-			std::cout << "Enter end timestamp: ";
+			std::cout << "Enter end timestamp (number): ";
 			std::cin >> endTimestamp;
 
 			std::string partyId;
-			std::cout << "Enter party ID: ";
+			std::cout << "Enter party ID (string): ";
 			std::cin >> partyId;
 
 			int partySize;
-			std::cout << "Enter party size: ";
+			std::cout << "Enter party size (number): ";
 			std::cin >> partySize;
 
 			int partyMax;
-			std::cout << "Enter party max: ";
+			std::cout << "Enter party max (number): ";
 			std::cin >> partyMax;
+
+			std::cout << '\n';
 
 			std::cout << "For how long? (seconds) ";
 			std::cin >> presence_duration;
