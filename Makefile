@@ -1,7 +1,7 @@
 CC=g++
 CXXFLAGS=-std=gnu++98 -Iinclude -Wall -pedantic
-CXXLDFLAGS=-ldiscord-rpc
-DISCORD-RPC-PATH=-Idiscord-rpc/build/include -Ldiscord-rpc/build/lib
+CXXLDFLAGS=-ldiscord-rpc -pthread
+DISCORD-RPC-PATH=-Idiscord-rpc/build/include -Ldiscord-rpc/build/lib -Ldiscord-rpc/build/lib64
 
 TARGET=presenceutil
 
