@@ -1,5 +1,7 @@
 #pragma once
 
+#include "discord_rpc.h"
+
 void handleDiscordReady(const DiscordUser* connectedUser);
 void handleDiscordDisconnected(int errcode, const char* message);
 void handleDiscordError(int errcode, const char* message);

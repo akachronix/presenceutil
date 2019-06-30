@@ -1,46 +1,12 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-#include <unistd.h>
+
+#include "wait.h"
+#include "handlers.h"
 
 #include "client_id.h"
 #include "discord_rpc.h"
-
-static void handleDiscordReady(const DiscordUser* connectedUser) {
-	return;
-}
-
-static void handleDiscordDisconnected(int errcode, const char* message) {
-	return;
-}
-
-static void handleDiscordError(int errcode, const char* message) {
-	return;
-}
-
-static void init() 
-{
-	DiscordEventHandlers handlers;
-	memset(&handlers, 0, sizeof(handlers));
-	handlers.ready = handleDiscordReady;
-	handlers.disconnected = handleDiscordDisconnected;
-	handlers.errored = handleDiscordError;
-	Discord_Initialize(CLIENT_ID, &handlers, 1, NULL);
-}
-
-static void update(const char* state, const char* details, long startTimestamp, long endTimestamp, const char* partyId, int partySize, int partyMax)
-{
-	DiscordRichPresence presence;
-	memset(&presence, 0, sizeof(presence));
-	presence.state = state;
-	presence.details = details;
-	presence.startTimestamp = startTimestamp;
-	presence.endTimestamp = endTimestamp;
-	presence.partyId = partyId;
-	presence.partySize = partySize;
-	presence.partyMax = partyMax;
-	Discord_UpdatePresence(&presence);
-}
 
 int main(int argc, const char* argv[])
 {
@@ -127,7 +93,7 @@ int main(int argc, const char* argv[])
 			presence_duration = 0;
 		}
 
-		usleep(1000000 * presence_duration);
+		wait(1000 * presence_duration);
 	}
 
 	Discord_Shutdown();

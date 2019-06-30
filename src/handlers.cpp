@@ -3,6 +3,8 @@
 #include "client_id.h"
 #include "discord_rpc.h"
 
+#include <cstring>
+
 void handleDiscordReady(const DiscordUser* connectedUser) {
 	return;
 }
