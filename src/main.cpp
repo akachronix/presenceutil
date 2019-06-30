@@ -5,7 +5,6 @@
 #include "wait.h"
 #include "handlers.h"
 
-#include "client_id.h"
 #include "discord_rpc.h"
 
 int main(int argc, const char* argv[])
