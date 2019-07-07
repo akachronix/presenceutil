@@ -4,3 +4,4 @@ include/client_id.h
 .vs/
 .vscode/
 LICENSE
+README.md
